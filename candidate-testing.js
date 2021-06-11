@@ -12,7 +12,6 @@ let questions = ["Who was the first American woman in space? ","True or false: 5
 let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
 let candidateAnswers = [];
 
-
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question("What is your name? ");
@@ -29,30 +28,17 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  console.log(`
-Candidate Name: ${candidateName}
+console.log("\nCandidate Name: " + candidateName);
 
-1) ${questions[0]}
-Your Answer: ${candidateAnswers[0]}
-Correct Answer: ${correctAnswers[0]}
+for(i = 0; i < questions.length; i++){
+console.log(`
+${i + 1}) ${questions[i]}
+Your Answer: ${candidateAnswers[i]}
+Correct Answer: ${correctAnswers[i]} `
+)}
 
-2) ${questions[1]}
-Your Answer: ${candidateAnswers[1]}
-Correct Answer: ${correctAnswers[1]}
-
-3) ${questions[2]}
-Your Answer: ${candidateAnswers[2]}
-Correct Answer: ${correctAnswers[2]}
-
-4) ${questions[3]}
-Your Answer: ${candidateAnswers[3]}
-Correct Answer: ${correctAnswers[3]}
-
-5) ${questions[4]}
-Your Answer: ${candidateAnswers[4]}
-Correct Answer: ${correctAnswers[4]}
-  `)
+candidateAnswers = candidateAnswers.map(v => v.toLowerCase());
+correctAnswers = correctAnswers.map(v => v.toLowerCase());
 
   let grade;
   
