@@ -40,10 +40,20 @@ Correct Answer: ${correctAnswers[i]} `
 candidateAnswers = candidateAnswers.map(v => v.toLowerCase());
 correctAnswers = correctAnswers.map(v => v.toLowerCase());
 
-  let grade;
-  
+let numCorrect= 0;
+let numWrong = 0;
 
-  return grade;
+for(i = 0; i < questions.length; i++){
+  if (candidateAnswers[i] === correctAnswers[i]){
+    numCorrect++;
+  }
+  else {
+    numWrong++;
+  }
+}
+
+let grade = numCorrect % questions.length;
+console.log(grade);
 }
 
 function runProgram() {
