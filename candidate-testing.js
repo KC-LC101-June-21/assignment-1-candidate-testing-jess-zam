@@ -32,7 +32,7 @@ console.log("\nCandidate Name: " + candidateName);
 
 for(i = 0; i < questions.length; i++){
 console.log(
-`${i + 1} ${questions[i]}
+`${i + 1}) ${questions[i]}
 Your Answer: ${candidateAnswers[i]}
 Correct Answer: ${correctAnswers[i]} 
 `
