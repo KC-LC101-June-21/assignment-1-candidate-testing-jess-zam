@@ -52,17 +52,21 @@ for(i = 0; i < questions.length; i++){
     numWrong++;
   }
 }
-
-let grade = (numCorrect / questions.length) * 100;
+let grade;
+grade = (numCorrect / questions.length) * 100;
 console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} responses correct) <<<`)
 
 if(grade >= 80){
   console.log(">>> Status: PASSED <<<")
 }
-else{console.log(">>> Status: FAILED <<<")}
-}
+else {
+  console.log(">>> Status: FAILED <<<")
+  }
 
 return grade;
+}
+
+
 
 function runProgram() {
   askForName();
