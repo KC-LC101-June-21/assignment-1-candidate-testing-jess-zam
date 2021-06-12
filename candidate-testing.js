@@ -31,10 +31,11 @@ function gradeQuiz(candidateAnswers) {
 console.log("\nCandidate Name: " + candidateName);
 
 for(i = 0; i < questions.length; i++){
-console.log(`
-${i + 1}) ${questions[i]}
+console.log(
+`${i + 1} ${questions[i]}
 Your Answer: ${candidateAnswers[i]}
-Correct Answer: ${correctAnswers[i]} `
+Correct Answer: ${correctAnswers[i]} 
+`
 )}
 
 candidateAnswers = candidateAnswers.map(v => v.toLowerCase());
@@ -52,8 +53,13 @@ for(i = 0; i < questions.length; i++){
   }
 }
 
-let grade = numCorrect % questions.length;
-console.log(grade);
+let grade = (numCorrect / questions.length) * 100;
+console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} responses correct) <<<`)
+
+if(grade >= 80){
+  console.log(">>> Status: PASSED <<<")
+}
+else{console.log(">>> Status: FAILED <<<")}
 }
 
 function runProgram() {
